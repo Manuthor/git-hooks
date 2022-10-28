@@ -5,4 +5,4 @@
   entry: cargo semver-checks check-release
   language: system
   types: [rust]
-  args: [--]
+  pass_filenames: false
