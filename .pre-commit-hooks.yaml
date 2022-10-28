@@ -8,8 +8,15 @@
   pass_filenames: false
 - id: audit
   name: audit
-  description: Check outdated deps and cargo audit
-  entry: cargo outdated -wR && cargo audit --deny warnings
+  description: Check cargo audit
+  entry: cargo audit --deny warnings
+  language: system
+  types: [rust]
+  pass_filenames: false
+- id: outdated
+  name: outdated
+  description: Check outdated deps
+  entry: cargo outdated -wR
   language: system
   types: [rust]
   pass_filenames: false
