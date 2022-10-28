@@ -1,0 +1,8 @@
+---
+- id: semver
+  name: semver
+  description: Check semver crate version considering potential breaking changes.
+  entry: cargo semver-checks check-release
+  language: system
+  types: [rust]
+  args: [--]
