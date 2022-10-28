@@ -20,3 +20,10 @@
   language: system
   types: [rust]
   pass_filenames: false
+- id: tests
+  name: tests
+  description: cargo test all features
+  entry: cargo test --all-features -- --nocapture
+  language: system
+  types: [rust]
+  pass_filenames: false
