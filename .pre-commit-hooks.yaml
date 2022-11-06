@@ -6,6 +6,7 @@
     language: system
     types: [rust]
     pass_filenames: false
+
   - id: audit
     name: audit
     description: Check cargo audit
@@ -13,6 +14,7 @@
     language: system
     types: [rust]
     pass_filenames: false
+
   - id: outdated
     name: outdated
     description: Check outdated deps
@@ -20,6 +22,7 @@
     language: system
     types: [rust]
     pass_filenames: false
+
   - id: tests
     name: tests
     description: cargo test all features
@@ -27,11 +30,65 @@
     language: system
     types: [rust]
     pass_filenames: false
+
   - id: clippy-all
     name: clippy-all
-    description: cargo test all features
+    description: cargo clippy all
     entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code
       -- --no-deps -D warnings -Wmissing_docs -W clippy::all
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: clippy-pedantic-possible-broken-code
+    name: clippy-pedantic-possible-broken-code
+    description: cargo clippy pedantic
+    entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code
+      -- --no-deps -D warnings -W clippy::pedantic
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: clippy-pedantic
+    name: clippy-pedantic
+    description: cargo clippy pedantic
+    entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
+      -D warnings -W clippy::pedantic
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: clippy-nursery-possible-broken-code
+    name: clippy-nursery-possible-broken-code
+    description: cargo clippy nursery
+    entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code
+      -- --no-deps -D warnings -W clippy::nursery
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: clippy-nursery
+    name: clippy-nursery
+    description: cargo clippy nursery
+    entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps
+      -D warnings -W clippy::nursery
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: clippy-others
+    name: clippy-others
+    description: cargo clippy leftovers linters
+    entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code
+      -- --no-deps -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
+    language: system
+    types: [rust]
+    pass_filenames: false
+
+  - id: cargo-format
+    name: cargo-format
+    description: cargo format
+    entry: cargo +nightly fmt --all -- --unstable-features --config edition="2021",imports_granularity="Crate",format_macro_matchers=true,format_strings=true,reorder_impl_items=true,group_imports="StdExternalCrate",unstable_features=true,use_field_init_shorthand=true
     language: system
     types: [rust]
     pass_filenames: false
