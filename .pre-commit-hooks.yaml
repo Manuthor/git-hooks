@@ -1,29 +1,37 @@
 ---
-- id: semver
-  name: semver
-  description: Check semver crate version considering potential breaking changes.
-  entry: cargo semver-checks check-release
-  language: system
-  types: [rust]
-  pass_filenames: false
-- id: audit
-  name: audit
-  description: Check cargo audit
-  entry: cargo audit --deny warnings
-  language: system
-  types: [rust]
-  pass_filenames: false
-- id: outdated
-  name: outdated
-  description: Check outdated deps
-  entry: cargo outdated -wR
-  language: system
-  types: [rust]
-  pass_filenames: false
-- id: tests
-  name: tests
-  description: cargo test all features
-  entry: cargo test --all-features -- --nocapture
-  language: system
-  types: [rust]
-  pass_filenames: false
+  - id: semver
+    name: semver
+    description: Check semver crate version considering potential breaking changes.
+    entry: cargo semver-checks check-release
+    language: system
+    types: [rust]
+    pass_filenames: false
+  - id: audit
+    name: audit
+    description: Check cargo audit
+    entry: cargo audit --deny warnings
+    language: system
+    types: [rust]
+    pass_filenames: false
+  - id: outdated
+    name: outdated
+    description: Check outdated deps
+    entry: cargo outdated -wR
+    language: system
+    types: [rust]
+    pass_filenames: false
+  - id: tests
+    name: tests
+    description: cargo test all features
+    entry: cargo test --all-features -- --nocapture
+    language: system
+    types: [rust]
+    pass_filenames: false
+  - id: clippy-all
+    name: clippy-all
+    description: cargo test all features
+    entry: cargo +nightly clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code
+      -- --no-deps -D warnings -Wmissing_docs -W clippy::all
+    language: system
+    types: [rust]
+    pass_filenames: false
