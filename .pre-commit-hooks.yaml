@@ -31,8 +31,8 @@
     types: [rust]
     pass_filenames: false
 
-  - id: clippy-all-possible-broken-code
-    name: clippy-all-possible-broken-code
+  - id: clippy-autofix-all-possible-broken-code
+    name: clippy-autofix-all-possible-broken-code
     description: cargo clippy all
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
       -D warnings -Wmissing_docs -W clippy::all
@@ -40,8 +40,8 @@
     types: [rust]
     pass_filenames: false
 
-  - id: clippy-all
-    name: clippy-all
+  - id: clippy-autofix-all
+    name: clippy-autofix-all
     description: cargo clippy all
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
       -Wmissing_docs -W clippy::all
@@ -49,8 +49,8 @@
     types: [rust]
     pass_filenames: false
 
-  - id: clippy-pedantic-possible-broken-code
-    name: clippy-pedantic-possible-broken-code
+  - id: clippy-autofix-pedantic-possible-broken-code
+    name: clippy-autofix-pedantic-possible-broken-code
     description: cargo clippy pedantic
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
       -D warnings -W clippy::pedantic
@@ -58,8 +58,8 @@
     types: [rust]
     pass_filenames: false
 
-  - id: clippy-pedantic
-    name: clippy-pedantic
+  - id: clippy-autofix-pedantic
+    name: clippy-autofix-pedantic
     description: cargo clippy pedantic
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
       -W clippy::pedantic
@@ -67,8 +67,8 @@
     types: [rust]
     pass_filenames: false
 
-  - id: clippy-nursery-possible-broken-code
-    name: clippy-nursery-possible-broken-code
+  - id: clippy-autofix-nursery-possible-broken-code
+    name: clippy-autofix-nursery-possible-broken-code
     description: cargo clippy nursery
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
       -D warnings -W clippy::nursery
@@ -76,8 +76,8 @@
     types: [rust]
     pass_filenames: false
 
-  - id: clippy-nursery
-    name: clippy-nursery
+  - id: clippy-autofix-nursery
+    name: clippy-autofix-nursery
     description: cargo clippy nursery
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
       -W clippy::nursery
@@ -85,8 +85,8 @@
     types: [rust]
     pass_filenames: false
 
-  - id: clippy-others-possible-broken-code
-    name: clippy-others-possible-broken-code
+  - id: clippy-autofix-others-possible-broken-code
+    name: clippy-autofix-others-possible-broken-code
     description: cargo clippy leftovers linters
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
       -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
@@ -94,8 +94,8 @@
     types: [rust]
     pass_filenames: false
 
-  - id: clippy-others
-    name: clippy-others
+  - id: clippy-autofix-others
+    name: clippy-autofix-others
     description: cargo clippy leftovers linters
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
       -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
