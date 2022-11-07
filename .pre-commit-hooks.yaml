@@ -32,8 +32,8 @@
     pass_filenames: false
 
   - id: clippy-autofix-all-possible-broken-code
-    name: clippy-autofix-all-possible-broken-code
-    description: cargo clippy all
+    name: clippy all with autofix and possible broken code
+    description: clippy all with autofix and possible broken code
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
       -D warnings -Wmissing_docs -W clippy::all
     language: system
@@ -41,8 +41,8 @@
     pass_filenames: false
 
   - id: clippy-autofix-all
-    name: clippy-autofix-all
-    description: cargo clippy all
+    name: clippy all with autofix
+    description: clippy all with autofix
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
       -Wmissing_docs -W clippy::all
     language: system
@@ -50,8 +50,8 @@
     pass_filenames: false
 
   - id: clippy-autofix-pedantic-possible-broken-code
-    name: clippy-autofix-pedantic-possible-broken-code
-    description: cargo clippy pedantic
+    name: clippy pedantic with autofix and possible broken code
+    description: clippy pedantic with autofix and possible broken code
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
       -D warnings -W clippy::pedantic
     language: system
@@ -59,7 +59,7 @@
     pass_filenames: false
 
   - id: clippy-autofix-pedantic
-    name: clippy-autofix-pedantic
+    name: clippy pedantic with autofix
     description: cargo clippy pedantic
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
       -W clippy::pedantic
@@ -68,8 +68,8 @@
     pass_filenames: false
 
   - id: clippy-autofix-nursery-possible-broken-code
-    name: clippy-autofix-nursery-possible-broken-code
-    description: cargo clippy nursery
+    name: clippy nursery with autofix and possible-broken-code
+    description: clippy nursery with autofix and possible-broken-code
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
       -D warnings -W clippy::nursery
     language: system
@@ -77,8 +77,8 @@
     pass_filenames: false
 
   - id: clippy-autofix-nursery
-    name: clippy-autofix-nursery
-    description: cargo clippy nursery
+    name: clippy nursery with autofix
+    description: clippy nursery with autofix and possible-broken-code
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
       -W clippy::nursery
     language: system
@@ -86,8 +86,8 @@
     pass_filenames: false
 
   - id: clippy-autofix-others-possible-broken-code
-    name: clippy-autofix-others-possible-broken-code
-    description: cargo clippy leftovers linters
+    name: clippy correctness suspicious style complexity perf with autofix and possible broken code
+    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps --broken-code -- --no-deps
       -D warnings -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
     language: system
@@ -95,8 +95,8 @@
     pass_filenames: false
 
   - id: clippy-autofix-others
-    name: clippy-autofix-others
-    description: cargo clippy leftovers linters
+    name: clippy correctness suspicious style complexity perf with autofix
+    description: clippy correctness suspicious style complexity perf with autofix and possible broken code
     entry: cargo clippy --all-targets --all-features --workspace --fix -Z unstable-options --allow-dirty --allow-staged --no-deps -- --no-deps -D warnings
       -W clippy::cargo -W clippy::correctness -W clippy::suspicious -W clippy::style -W clippy::complexity -W clippy::perf
     language: system
