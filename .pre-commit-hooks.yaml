@@ -118,3 +118,11 @@
     language: system
     types: [rust]
     pass_filenames: false
+
+  - id: dprint-toml-fix
+    name: dprint-toml-fix
+    description: dprint linter/formatter (in Rust)
+    entry: dprint --config https://raw.githubusercontent.com/Manuthor/git-hooks/main/dprint.json fmt -- '**/*.toml'
+    language: system
+    types: [text]
+    pass_filenames: false
