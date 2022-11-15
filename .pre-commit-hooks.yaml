@@ -119,6 +119,14 @@
     types: [rust]
     pass_filenames: false
 
+  - id: cargo-update
+    name: cargo-update
+    description: cargo update dependencies
+    entry: cargo update
+    language: system
+    types: [rust]
+    pass_filenames: false
+
   - id: dprint-toml-fix
     name: dprint-toml-fix
     description: dprint linter/formatter (in Rust)
